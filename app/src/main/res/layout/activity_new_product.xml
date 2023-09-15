@@ -29,7 +29,7 @@
         android:backgroundTint="@color/dark"
         android:clickable="true"
         android:contentDescription="@string/app_name"
-        app:backgroundTint="#69C0FF"
+        app:backgroundTint="@color/dark"
         app:tint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

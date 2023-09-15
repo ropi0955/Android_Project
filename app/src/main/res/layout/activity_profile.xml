@@ -4,34 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/tienda_bg"
     tools:context=".ProfileActivity">
-
-    <ImageView
-        android:id="@+id/profilImageView"
-        android:layout_width="161dp"
-        android:layout_height="158dp"
-        android:layout_marginTop="43dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/usernameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Username"
+        android:layout_width="208dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/blue_border"
+        android:text="   username"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/textEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="222dp"
+        android:layout_height="51dp"
         android:layout_marginTop="25dp"
+        android:background="@drawable/blue_border"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:drawablePadding="8dp"
         android:ems="10"
         android:hint="email"
         android:inputType="textEmailAddress"
@@ -41,39 +37,31 @@
         app:layout_constraintTop_toBottomOf="@+id/textFullName" />
 
     <EditText
-        android:id="@+id/textPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/textPhone"
+        android:layout_width="215dp"
+        android:layout_height="55dp"
         android:layout_marginTop="25dp"
+        android:background="@drawable/blue_border"
         android:ems="10"
-        android:hint="jelszó"
-        android:inputType="textPassword"
+        android:hint="  Telefonszám"
+        android:inputType="phone"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textEmailAddress" />
 
     <EditText
-        android:id="@+id/textPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:ems="10"
-        android:hint="telefonszám"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPassword" />
-
-    <EditText
         android:id="@+id/textPostalAddress"
+        style="@style/Widget.AppCompat.EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="25dp"
+        android:background="@drawable/blue_border"
+        android:drawableLeft="@drawable/baseline_house_24"
+        android:drawablePadding="8dp"
         android:ems="10"
-        android:hint="cím"
+        android:hint=" cím"
         android:inputType="textPostalAddress"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,25 +69,30 @@
 
     <EditText
         android:id="@+id/textPostCode"
-        android:layout_width="115dp"
+        android:layout_width="153dp"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
+        android:background="@drawable/blue_border"
         android:ems="10"
-        android:hint="irányítószám"
+        android:hint="  irányítószám"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/textPostalAddress"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textPostalAddress"
         app:layout_constraintTop_toTopOf="@+id/textPostalAddress" />
 
     <EditText
         android:id="@+id/textFullName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="230dp"
+        android:layout_height="48dp"
         android:layout_marginTop="25dp"
-        android:ems="10"
+        android:background="@drawable/blue_border"
+        android:drawableLeft="@drawable/baseline_account_circle_24"
+        android:drawablePadding="8dp"
         android:hint="Teljes Név"
         android:inputType="text"
         android:minHeight="48dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameText" />
@@ -113,6 +106,7 @@
         android:clickable="true"
         android:tint="@color/white"
         app:backgroundTint="@color/dark"
+        app:fabSize="auto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_edit"
@@ -132,5 +126,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
         app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="211dp"
+        android:layout_height="171dp"
+        android:layout_marginTop="64dp"
+        android:background="@color/dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_account_circle_24" />
+
+    <Button
+        android:id="@+id/changePasswordbutton"
+        android:layout_width="146dp"
+        android:layout_height="57dp"
+        android:text="Jelszócsere"
+        android:textColorHighlight="@color/dark"
+        android:textColorLink="@color/dark"
+        app:layout_constraintBottom_toTopOf="@+id/usernameText"
+        app:layout_constraintEnd_toEndOf="@+id/usernameText"
+        app:layout_constraintHorizontal_bias="0.596"
+        app:layout_constraintStart_toStartOf="@+id/usernameText"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.488" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

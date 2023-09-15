@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Tienda_Android_Project"
         tools:targetApi="31">
         <activity
+            android:name=".pages.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".pages.SignupActivity"
             android:exported="false" />
         <activity

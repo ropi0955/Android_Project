@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewProduct">
+    tools:context=".NewProduct"
+    android:background="@color/background">
+
 
     <TextView
         android:id="@+id/textView"
@@ -15,19 +17,24 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/backMainActivityButton"
+        app:layout_constraintStart_toEndOf="@+id/backMainActivityButton"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/backMainActivityButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/dark"
         android:clickable="true"
         android:contentDescription="@string/app_name"
+        app:backgroundTint="#69C0FF"
+        app:tint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+        />
 
     <TextView
         android:id="@+id/textView2"
@@ -39,5 +46,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

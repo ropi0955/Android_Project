@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Tienda_Android_Project"
         tools:targetApi="31">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".NewProduct"
             android:exported="false" />
         <activity

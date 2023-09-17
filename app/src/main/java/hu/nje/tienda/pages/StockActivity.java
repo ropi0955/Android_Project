@@ -7,6 +7,7 @@ import android.os.Bundle;
 import hu.nje.tienda.R;
 
 public class StockActivity extends AppCompatActivity {
+    //teszt komment a merge-hez
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -27,6 +27,8 @@ Funkciók/lapok:
     -cím (teljes irsz-város-utca-ház-emelet)
     -telefonszám
     -csekbosz adatvédelmi feltételek (link a feltételekhez ->pdf)
+- főoldal
+    -választható opciók megjelenítése
 -profil (Gergő)
     -regisztrációs adatok
     -Dolgozói szám! 

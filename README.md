@@ -5,9 +5,11 @@ Projekt neve: Tienda.
 
 Leírás:
 Adás vétel applikáció ahova mindenki feltöltheti és eladhatja az általa választott árucikkeit.
+Egy cég vállalat irányítási rendszerének belső applikációja 
+ 
 
 Funkciók/lapok:
-# Zsolti
+# Zsolti (Maradjon meg) 
 -kezdőoldal  
     -login
     -email
@@ -25,39 +27,37 @@ Funkciók/lapok:
     -cím (teljes irsz-város-utca-ház-emelet)
     -telefonszám
     -csekbosz adatvédelmi feltételek (link a feltételekhez ->pdf)
--profil
+-profil (Gergő)
     -regisztrációs adatok
-    -bankkártya
+    -Dolgozói szám! 
     -profilkép
     -értékelés
--új termék hozzáadás
-    -kategória
-    -kép feltöltés?
-    -ár
-    -leírás
-    -helyszín
-    -állapot
--piac
-    -kereső
-    -termék lista (név + ?kép? ->irányítson a termékprofilra)
+-új megrendelés hozzáadása! (Feri)
+    -Termék
+    -Mennyiséget
+    -Dátum (mikorra akarja)  
+-Készlet (Bence)
+    -termék lista (név)
     -termék ára
     -rövid leírás
--termékprofil
-    -elérhetőség
+    -mennyiség
+    -készlet érték (db+érték)
+-termékprofil (Bence)
     -leírás
     -kép
     -ár
-    -állapot
-    -kosárba
-    -lefoglalás gomb ->jelzze foglaltként
+-megrendelő (fix pl 3-4) (Feri+)
+    -neve
+    -kapcsolattartó
+    -email cím
+    -telefonszám
+    -(új megrendelő felvétel)??
+-Pénzügyi felület 
+    -Meglévő pénzösszeg
+    -Bevétel
+    -Kiadás 
 
-# -licitálás
-#   -ajánlatadás
-#   -legnagyobb összeg kiirása
 
-# -kosár
-#  -kiválasztott termék kerüljön be
-#  -fizetés gomb ->ha megvették a termék jelezze hogy eladva
 
 Szinek:
 

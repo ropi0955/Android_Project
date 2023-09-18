@@ -130,7 +130,7 @@
                 android:padding="8dp" />
 
             <EditText
-                android:id="@+id/signup_confirm"
+                android:id="@+id/signup_repassword"
                 android:layout_width="355dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"

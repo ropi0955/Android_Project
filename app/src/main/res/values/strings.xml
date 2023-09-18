@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Tienda_Android_Project</string>
+
+    <string-array name="howmanypieces">
+        <item>termék 1</item>
+        <item>termék 2</item>
+        <item>termék 3</item>
+
+    </string-array>
 </resources>

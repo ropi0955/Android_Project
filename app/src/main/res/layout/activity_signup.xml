@@ -91,9 +91,10 @@
                 android:hint="Utca, út stb*"
                 android:padding="8dp" />
 
+
             <EditText
                 android:id="@+id/signup_street_number"
-                android:layout_width="320dp"
+                android:layout_width="368dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
@@ -102,7 +103,6 @@
                 android:drawablePadding="8dp"
                 android:hint="Házszám*/Emelet/Lakásszám"
                 android:padding="8dp" />
-
 
             <EditText
                 android:id="@+id/signup_username"

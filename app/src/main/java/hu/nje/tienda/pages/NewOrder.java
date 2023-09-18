@@ -12,20 +12,25 @@ import android.widget.Toast;
 
 import hu.nje.tienda.R;
 
-public class NewOrder extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
+public class NewOrder extends AppCompatActivity /*implements AdapterView.OnItemSelectedListener*/ {
+private Spinner spinner2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_order);
 
-        Spinner spinner = findViewById(R.id.spinner2);
+        spinner2 = findViewById(R.id.spinner2);
+
+        initSpinner(R.array.howmanypieces,spinner2);
+    }
+       private void initSpinner(int resId, Spinner spinner)
+        {
         ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(this,R.array.howmanypieces, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setOnItemSelectedListener(this);
+        spinner.setAdapter(adapter);
     }
 
-    @Override
+   /* @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
         String text= parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(),text, Toast.LENGTH_SHORT).show();
@@ -33,6 +38,5 @@ public class NewOrder extends AppCompatActivity implements AdapterView.OnItemSel
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
+}*/
     }
-}

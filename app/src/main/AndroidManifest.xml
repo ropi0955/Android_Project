@@ -28,9 +28,6 @@
             android:name=".pages.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".pages.ChangePasswordActivity"
-            android:exported="false" />
-        <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity

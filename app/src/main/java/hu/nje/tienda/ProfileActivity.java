@@ -9,7 +9,6 @@ import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import hu.nje.tienda.pages.ChangePasswordActivity;
 
 public class ProfileActivity extends AppCompatActivity {
     private FloatingActionButton backMainActivityButton2;
@@ -36,13 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
                 modifyProfileButton();
             }
         });
-        changePasswordbutton = findViewById(R.id.changePasswordbutton);
-        changePasswordbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changePasswordbutton();
-            }
-        });
+
     }
     private void backMainActivity2() {
         Intent intent = new Intent(this, MainActivity.class);
@@ -54,8 +47,5 @@ public class ProfileActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivities(new Intent[]{intent});
     }
-    private void changePasswordbutton() {
-        Intent intent = new Intent(this, ChangePasswordActivity.class);
-        startActivities(new Intent[]{intent});
-    }
+
 }

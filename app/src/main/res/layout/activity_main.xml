@@ -5,28 +5,101 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/background">
+    android:background="@drawable/tienda_bg">
 
-    <ImageButton
-        android:id="@+id/profileButton"
-        android:layout_width="104dp"
-        android:layout_height="108dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+    <EditText
+        android:id="@+id/main_maintext"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/blue_border"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        android:text="Főoldal"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonNewProduct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add el valamid"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/button_new_order"
+        android:layout_width="260dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/dark"
+        android:text="Új rendelés felvétele"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_maintext" />
+
+    <Button
+        android:id="@+id/button_stock"
+        android:layout_width="260dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/dark"
-        app:tint="@color/white"/>
+        android:text="Készlet"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_new_order" />
+
+    <Button
+        android:id="@+id/button_customer"
+        android:layout_width="260dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/dark"
+        android:text="Megrendelőink"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_stock" />
+
+
+    <Button
+        android:id="@+id/button_finance"
+        android:layout_width="260dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/dark"
+        android:text="Pénzügy"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_customer" />
+
+    <Button
+        android:id="@+id/button_profile"
+        android:layout_width="260dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/dark"
+        android:text="Profilom"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_finance" />
+
+    <Button
+        android:id="@+id/button_log_out"
+        android:layout_width="260dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/dark"
+        android:text="Kijelentkezés"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

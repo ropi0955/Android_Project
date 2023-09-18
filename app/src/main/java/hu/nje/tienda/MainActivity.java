@@ -10,7 +10,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
-private Button buttonNewProduct;
+private Button button_new_order;
+private Button button_profile;
 private ImageButton profileButton;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -18,8 +19,9 @@ private ImageButton profileButton;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonNewProduct = findViewById(R.id.buttonNewProduct);
-        profileButton = findViewById(R.id.profileButton);
+        button_new_order = findViewById(R.id.button_new_order);
+        button_profile = findViewById(R.id.button_profile);
+
 
 
 
@@ -27,13 +29,13 @@ private ImageButton profileButton;
 
 
         //navigáció New Product oldalra
-        buttonNewProduct.setOnClickListener(new View.OnClickListener() {
+        button_new_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
             openNewProduct();
             }
         });
-        profileButton.setOnClickListener(new View.OnClickListener() {
+       button_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {openProfileActivity(); }
         });

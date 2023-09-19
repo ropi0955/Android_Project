@@ -40,11 +40,15 @@
         android:id="@+id/ed2"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:layout_marginBottom="100dp"
         android:minHeight="48dp"
+        android:textColor="@color/black"
         android:text="Termék ára"
         app:layout_constraintBottom_toTopOf="@+id/tb1"
         app:layout_constraintEnd_toEndOf="@+id/ed3"
         app:layout_constraintStart_toStartOf="@+id/ed3"
+        app:layout_constraintTop_toBottomOf="@+id/ed3"
         tools:ignore="MissingConstraints" />
 
     <EditText

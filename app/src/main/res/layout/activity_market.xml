@@ -26,7 +26,7 @@
 
     <LinearLayout
         android:layout_width="370dp"
-        android:layout_height="95dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/round"
         android:backgroundTint="@color/white"
@@ -62,12 +62,14 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+
             <TextView
-                android:id="@+id/product_description"
+                android:id="@+id/product_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Termék leírása"
-                android:textSize="14sp" />
+                android:text="Termék mennyisége"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/product_price"
@@ -76,6 +78,13 @@
                 android:text="Termék ára"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/product_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Termék leírása"
+                android:textSize="14sp" />
 
         </LinearLayout>
 

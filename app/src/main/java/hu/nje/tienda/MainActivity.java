@@ -3,14 +3,19 @@ package hu.nje.tienda;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import hu.nje.tienda.pages.MarketActivity;
+import hu.nje.tienda.pages.NewOrder;
+
 public class MainActivity extends AppCompatActivity {
 private Button button_new_order;
+private Button button_stock;
 private Button button_profile;
 private ImageButton profileButton;
     @SuppressLint("MissingInflatedId")
@@ -20,6 +25,7 @@ private ImageButton profileButton;
         setContentView(R.layout.activity_main);
 
         button_new_order = findViewById(R.id.button_new_order);
+        button_stock = findViewById(R.id.button_stock);
         button_profile = findViewById(R.id.button_profile);
 
 
@@ -28,17 +34,29 @@ private ImageButton profileButton;
 
 
 
-        //navigáció New Product oldalra
+        //navigációk
+        
         button_new_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            openNewProduct();
+            openNewOrder();
             }
         });
+
+        button_stock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {openStock();
+            }
+        });
+
+
+
        button_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {openProfileActivity(); }
         });
+
+       
     }
 
     private void openProfileActivity() {
@@ -46,8 +64,15 @@ private ImageButton profileButton;
         startActivities(new Intent[]{intent});
     }
 
-    private void openNewProduct() {
-        Intent intent = new Intent(this, NewProduct.class);
+    private void openNewOrder() {
+        Intent intent = new Intent(this, NewOrder.class);
         startActivities(new Intent[]{intent});
     }
+
+    private void openStock(){
+        Intent intent = new Intent(this, MarketActivity.class);
+        startActivities(new Intent[]{intent});
+    }
+
+
 }

@@ -66,10 +66,10 @@ public class NewOrder extends AppCompatActivity /*implements AdapterView.OnItemS
 
         ;
 
-        private void initSpinner(int resId, Spinner spinner) {
+        private void initSpinner(int resId, Spinner spinner2) {
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, resId, android.R.layout.simple_spinner_item);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner.setAdapter(adapter);
+            spinner2.setAdapter(adapter);
         }
     }
 

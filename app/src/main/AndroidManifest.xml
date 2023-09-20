@@ -13,10 +13,10 @@
         android:theme="@style/Theme.Tienda_Android_Project"
         tools:targetApi="31">
         <activity
-            android:name=".pages.SalesActivity"
+            android:name=".pages.ProfPageActivity"
             android:exported="false" />
         <activity
-            android:name=".SalesActivity"
+            android:name=".pages.SalesActivity"
             android:exported="false" />
         <activity
             android:name=".pages.NewOrder"

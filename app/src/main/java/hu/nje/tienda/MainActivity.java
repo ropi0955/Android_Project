@@ -3,7 +3,6 @@ package hu.nje.tienda;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -59,7 +58,7 @@ private ImageButton profileButton;
 
        button_profile.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {openProfileActivity(); }
+            public void onClick(View view) {openProfileactivity(); }
         });
 
        
@@ -78,7 +77,7 @@ private ImageButton profileButton;
         Intent intent = new Intent(this, SalesActivity.class);
         startActivities(new Intent[]{intent});
     }
-    private void openProfileActivity() {
+    private void openProfileactivity() {
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivities(new Intent[]{intent});
     }

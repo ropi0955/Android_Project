@@ -33,29 +33,32 @@
         android:textColorLink="@color/black"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="86dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/ed2"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:minHeight="48dp"
         android:text="Termék ára"
-        app:layout_constraintBottom_toTopOf="@+id/tb1"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/ed3"
         app:layout_constraintStart_toStartOf="@+id/ed3"
+        app:layout_constraintTop_toBottomOf="@+id/ed3"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/ed3"
         android:layout_width="350dp"
         android:layout_height="58dp"
-        android:textColor="@color/black"
         android:layout_marginTop="164dp"
         android:ems="10"
-        android:text="Kért mennyiség"
         android:inputType="number"
+        android:text="Kért mennyiség"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/spinner2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/spinner2"
@@ -63,12 +66,12 @@
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="350dp"
+        android:layout_width="349dp"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="100dp"
+        android:clickable="true"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,8 +92,11 @@
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:stretchColumns="*"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="440dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed2"
+        app:layout_constraintVertical_bias="0.372"
         tools:ignore="MissingConstraints">
 
         <TableRow
@@ -101,30 +107,30 @@
             <TextView
                 android:id="@+id/t1"
                 android:layout_width="wrap_content"
-                android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:text="Termék neve" />
+                android:text="Termék neve"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/t2"
                 android:layout_width="wrap_content"
-                android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:text="Termék ára" />
+                android:text="Termék ára"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/t3"
                 android:layout_width="wrap_content"
-                android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:text="Termék mennyisége" />
+                android:text="Termék mennyisége"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/t4"
                 android:layout_width="wrap_content"
-                android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:text="Összesen" />
+                android:text="Összesen"
+                android:textColor="@color/black" />
         </TableRow>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

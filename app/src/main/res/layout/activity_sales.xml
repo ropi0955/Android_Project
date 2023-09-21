@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tienda_bg"
+    tools:context=".pages.SalesActivity">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backMainActivityButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/dark"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        app:backgroundTint="@color/dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_home_24"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/dollar_sign_sales"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backMainActivityButton3" />
+
+    <EditText
+        android:id="@+id/IncomeM"
+        android:layout_width="234dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="356dp"
+        android:background="@drawable/blue_border"
+        android:drawablePadding="8dp"
+        android:inputType="numberSigned"
+        android:padding="8dp"
+        android:text="100000.000"
+        android:textAlignment="center"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/moneyText1"
+        android:layout_width="118dp"
+        android:layout_height="62dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="356dp"
+        android:background="@drawable/blue_border"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        android:text="Bevétel:"
+        android:textAlignment="center"
+        android:textSize="29dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/moneyText2"
+        android:layout_width="118dp"
+        android:layout_height="62dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="436dp"
+        android:background="@drawable/blue_border"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        android:text="Kiadás:"
+        android:textAlignment="center"
+        android:textSize="29dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/moneyText3"
+        android:layout_width="118dp"
+        android:layout_height="62dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="516dp"
+        android:background="@drawable/blue_border"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        android:text="Össz:"
+        android:textAlignment="center"
+        android:textSize="29dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/SummaM"
+        android:layout_width="234dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/blue_border"
+        android:drawablePadding="8dp"
+        android:inputType="numberSigned"
+        android:padding="8dp"
+        android:text="100000.000"
+        android:textAlignment="center"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/OutgoingM" />
+
+    <EditText
+        android:id="@+id/OutgoingM"
+        android:layout_width="234dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/blue_border"
+        android:drawablePadding="8dp"
+        android:inputType="numberSigned"
+        android:padding="8dp"
+        android:text="100000.000"
+        android:textAlignment="center"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IncomeM" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

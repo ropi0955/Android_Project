@@ -1,4 +1,4 @@
-package hu.nje.tienda;
+package hu.nje.tienda.pages;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,24 +8,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class ProfileActivity extends AppCompatActivity {
-    private FloatingActionButton backMainActivityButton2;
+import hu.nje.tienda.MainActivity;
+import hu.nje.tienda.R;
+
+public class SalesActivity extends AppCompatActivity {
+    private FloatingActionButton backMainActivityButton3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_sales);
 
-        backMainActivityButton2 = findViewById(R.id.backMainActivityButton2);
-        backMainActivityButton2.setOnClickListener(new View.OnClickListener() {
+        backMainActivityButton3 = findViewById(R.id.backMainActivityButton3);
+        backMainActivityButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                backMainActivity2();
+                backMainActivity3();
             }
         });
     }
-    private void backMainActivity2() {
+    private void backMainActivity3() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivities(new Intent[]{intent});
     }
-
 }

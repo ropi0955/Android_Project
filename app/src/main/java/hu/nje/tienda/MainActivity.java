@@ -58,7 +58,7 @@ private ImageButton profileButton;
 
        button_profile.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {openProfileactivity(); }
+            public void onClick(View view) {openProfileActivity(); }
         });
 
        
@@ -77,7 +77,7 @@ private ImageButton profileButton;
         Intent intent = new Intent(this, SalesActivity.class);
         startActivities(new Intent[]{intent});
     }
-    private void openProfileactivity() {
+    private void openProfileActivity() {
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivities(new Intent[]{intent});
     }

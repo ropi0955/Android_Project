@@ -1,14 +1,12 @@
 package hu.nje.tienda;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 
 public class ProfileActivity extends AppCompatActivity {
     private FloatingActionButton backMainActivityButton2;
@@ -24,7 +22,6 @@ public class ProfileActivity extends AppCompatActivity {
                 backMainActivity2();
             }
         });
-
     }
     private void backMainActivity2() {
         Intent intent = new Intent(this, MainActivity.class);

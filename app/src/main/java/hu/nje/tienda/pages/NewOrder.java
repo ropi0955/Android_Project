@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -28,7 +29,7 @@ public class NewOrder extends AppCompatActivity /*implements AdapterView.OnItemS
 
     private TableLayout table;
 
-    EditText ed1, ed2, ed3, ed4, ed5, ed6;
+    EditText ed1, ed2, ed3, ed4;
     Button b1;
 
     @Override
@@ -37,44 +38,25 @@ public class NewOrder extends AppCompatActivity /*implements AdapterView.OnItemS
         setContentView(R.layout.activity_new_order);
 
 
-        View spinner2 = findViewById(R.id.spinner2);
+        ed1 = findViewById(R.id.ed1);
         ed2 = findViewById(R.id.ed2);
         ed3 = findViewById(R.id.ed3);
 
 
         b1 = findViewById(R.id.btn1);
         b1.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 add();
             }
         });
     }
 
-    public class NewOrder2 extends AppCompatActivity {
-        private Spinner spinner2;
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_new_order);
-
-            spinner2 = findViewById(R.id.spinner2);
-
-            initSpinner(R.array.howmanypieces, spinner2);
-        }
-
-        ;
-
-        private void initSpinner(int resId, Spinner spinner2) {
-            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, resId, android.R.layout.simple_spinner_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner2.setAdapter(adapter);
-        }
-    }
 
 
-    public void add() {
+    public void add()
+    {
 
         int tot;
 
@@ -127,6 +109,7 @@ public class NewOrder extends AppCompatActivity /*implements AdapterView.OnItemS
         ed2.setText("");
         ed3.setText("");
         ed1.requestFocus();
+
 
 
     }

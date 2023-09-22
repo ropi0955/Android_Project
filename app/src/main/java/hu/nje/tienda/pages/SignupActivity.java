@@ -33,6 +33,7 @@ public class SignupActivity extends AppCompatActivity {
         street_number = findViewById(R.id.signup_street_number);
         user_name = findViewById(R.id.signup_username);
         password = findViewById(R.id.signup_password);
+        repassword = findViewById(R.id.signup_repassword);
         MyDatabase = new DatabaseHelper(this);
 
         //Gomb(ok)
@@ -40,8 +41,10 @@ public class SignupActivity extends AppCompatActivity {
 
 
         signup.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+
 
                 String user_email = email.getText().toString();
                 String user_last_name = last_name.getText().toString();
@@ -53,6 +56,7 @@ public class SignupActivity extends AppCompatActivity {
                 String user_password = password.getText().toString();
                 String repass = repassword.getText().toString();
 
+
                 if (TextUtils.isEmpty(user_email) || TextUtils.isEmpty(user_last_name) || TextUtils.isEmpty(user_first_name)
                         || TextUtils.isEmpty(user_city) || TextUtils.isEmpty(user_street_name) || TextUtils.isEmpty(user_street_number)
                         || TextUtils.isEmpty(user_username) || TextUtils.isEmpty(user_password) || TextUtils.isEmpty(repass)){
@@ -60,9 +64,9 @@ public class SignupActivity extends AppCompatActivity {
                 }else{
                     if (user_password.equals(repass)){
                       Boolean checkemail = MyDatabase.checkEmail(user_email);
-                      if (checkemail == false){
+                      if (!checkemail){
                           Boolean insert = MyDatabase.insertData(user_email,user_last_name,user_first_name,user_city,user_street_name,user_street_number,user_username,user_password);
-                          if (insert == true){
+                          if (insert){
                               Toast.makeText(SignupActivity.this, "Sikeres regisztráció", Toast.LENGTH_SHORT).show();
                               Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                               startActivity(intent);

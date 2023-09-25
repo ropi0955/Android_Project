@@ -30,13 +30,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Boolean insertData(String email, String password, String lastName, String firstName, String userName, String cityName, String streetName, String streetNumbers){
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("email",email);
+
+        // Automatikusan a kötelező nagybetűvel kezdődő szavakat kezdő nagybetűkké alakítása (pl.: ferenc => Ferenc)
+        String uppercaseLastName = lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
+        String uppercaseFirstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
+        String uppercaseCityName = cityName.substring(0, 1).toUpperCase() + cityName.substring(1);
+        String uppercaseStreetName = streetName.substring(0, 1).toUpperCase() + streetName.substring(1);
+        String uppercaseUserName = userName.substring(0, 1).toUpperCase() + userName.substring(1);
+
+        contentValues.put("email",email.toUpperCase());
         contentValues.put("password",password);
-        contentValues.put("lastName",lastName);
-        contentValues.put("firstName",firstName);
-        contentValues.put("userName",userName);
-        contentValues.put("cityName",cityName);
-        contentValues.put("streetName",streetName);
+        contentValues.put("lastName",uppercaseLastName);
+        contentValues.put("firstName",uppercaseFirstName);
+        contentValues.put("userName",uppercaseUserName);
+        contentValues.put("cityName",uppercaseCityName);
+        contentValues.put("streetName",uppercaseStreetName);
         contentValues.put("streetNumbers",streetNumbers);
         long result = MyDatabase.insert("allusers", null, contentValues);
 
@@ -61,11 +69,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Boolean checkEmailAndPassword(String email, String password){
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
+        System.out.println("email:" + email);
+        System.out.println("jelszo:" + password);
         Cursor cursor = MyDatabase.rawQuery("Select * from allusers where email = ? and password = ?", new String[]{email, password});
 
         if (cursor.getCount() > 0){
+            System.out.println("válasz: true");
             return true;
         }else{
+            System.out.println("válasz: false");
             return false;
         }
 

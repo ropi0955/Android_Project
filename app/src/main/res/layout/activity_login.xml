@@ -51,6 +51,7 @@
                 android:background="@drawable/blue_border"
                 android:drawableLeft="@drawable/baseline_password_24"
                 android:drawablePadding="8dp"
+                android:inputType="textPassword"
                 android:hint="Jelszó*"
                 android:padding="8dp" />
 
@@ -60,6 +61,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:text="Bejelentkezés"
+                android:backgroundTint="@color/middle"
                 android:id="@+id/login_button"
                 android:textSize="25dp"
                 android:drawableRight="@drawable/baseline_keyboard_arrow_right_24"

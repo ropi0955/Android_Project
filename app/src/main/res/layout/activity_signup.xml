@@ -14,12 +14,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:text="Személyes adatok"
-            android:textSize="36dp"
+            android:layout_width="270dp"
+            android:layout_height="80dp"
+            android:text="Regisztráció"
+            android:textSize="50dp"
             android:textColor="@color/white"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="sans-serif-medium"
+            android:textFontWeight="@integer/material_motion_duration_medium_2"
             android:layout_gravity="center"/>
 
 
@@ -34,99 +36,139 @@
             <EditText
                 android:id="@+id/signup_email"
                 android:layout_width="340dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/blue_border"
                 android:drawableLeft="@drawable/baseline_email_24"
                 android:drawablePadding="8dp"
                 android:hint="Email cím*"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="textEmailAddress"
                 android:padding="8dp" />
 
             <EditText
                 android:id="@+id/signup_lastname"
                 android:layout_width="180dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="0dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/blue_border"
                 android:drawableLeft="@drawable/baseline_account_circle_24"
                 android:drawablePadding="8dp"
                 android:hint="Vezetéknév*"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="text"
                 android:padding="8dp" />
 
             <EditText
                 android:id="@+id/signup_firstname"
                 android:layout_width="180dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="190dp"
-                android:layout_marginTop="-60dp"
+                android:layout_marginTop="-50dp"
                 android:background="@drawable/blue_border"
                 android:drawableLeft="@drawable/baseline_account_circle_24"
                 android:drawablePadding="8dp"
                 android:hint="Keresztnév*"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="textPersonName"
                 android:padding="8dp" />
 
             <EditText
                 android:id="@+id/signup_city"
                 android:layout_width="180dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="0dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/blue_border"
                 android:drawableLeft="@drawable/baseline_add_home_work_24"
                 android:drawablePadding="8dp"
                 android:hint="Város*"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="textAutoComplete"
                 android:padding="8dp" />
 
             <EditText
                 android:id="@+id/signup_street_name"
                 android:layout_width="180dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="190dp"
-                android:layout_marginTop="-60dp"
+                android:layout_marginTop="-50dp"
                 android:background="@drawable/blue_border"
                 android:drawableLeft="@drawable/baseline_holiday_village_24"
                 android:drawablePadding="8dp"
-                android:hint="Utca, út stb*"
+                android:hint="Utca/út név*"
+                android:fontFamily="sans-serif-medium"
                 android:padding="8dp" />
 
 
             <EditText
                 android:id="@+id/signup_street_number"
                 android:layout_width="368dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/blue_border"
                 android:drawableLeft="@drawable/baseline_house_24"
                 android:drawablePadding="8dp"
                 android:hint="Házszám*/Emelet/Lakásszám"
+                android:inputType="date"
+                android:fontFamily="sans-serif-medium"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/phone_number"
+                android:layout_width="368dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/blue_border"
+                android:drawableLeft="@drawable/baseline_phone_forwarded_24"
+                android:drawablePadding="8dp"
+                android:hint="Telefonszám* (pl 0612345678)"
+                android:inputType="phone"
+                android:fontFamily="sans-serif-medium"
+                android:padding="8dp" />
+            <EditText
+                android:id="@+id/birthday"
+                android:layout_width="368dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/blue_border"
+                android:drawableLeft="@drawable/baseline_date_range_24"
+                android:drawablePadding="8dp"
+                android:hint="Születési dátum* (yyyy/mm/dd)"
+                android:inputType="datetime"
+                android:fontFamily="sans-serif-medium"
                 android:padding="8dp" />
 
             <EditText
                 android:id="@+id/signup_username"
                 android:layout_width="355dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/blue_border"
                 android:drawableLeft="@drawable/baseline_groups_2_24"
                 android:drawablePadding="8dp"
-                android:hint="Felhasználóneve*"
+                android:hint="Felhasználó név*"
+                android:fontFamily="sans-serif-medium"
                 android:padding="8dp" />
 
             <EditText
                 android:id="@+id/signup_password"
                 android:layout_width="355dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/blue_border"
                 android:drawableLeft="@drawable/baseline_password_24"
                 android:drawablePadding="8dp"
-                android:hint="Jelszava*"
+                android:hint="Jelszó*"
                 android:inputType="textPassword"
+                android:fontFamily="sans-serif-medium"
                 android:padding="8dp" />
 
             <TextView
@@ -135,32 +177,60 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="Nagybetűvel kezdődjön tartalmazzon számot és speciális karaktert (pl.: @,#,$,%,^,*, stb...)"
-                android:textColor="@color/middle"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="15dp" />
 
 
             <EditText
                 android:id="@+id/signup_repassword"
                 android:layout_width="355dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/blue_border"
                 android:drawableLeft="@drawable/baseline_password_24"
                 android:drawablePadding="8dp"
-                android:hint="Jelszava újra*"
+                android:hint="Jelszó újra*"
+                android:fontFamily="sans-serif-medium"
                 android:inputType="textPassword"
                 android:padding="8dp" />
+
+            <CheckBox
+                android:id="@+id/data_checkbox"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="-8dp"
+                android:backgroundTint="@color/middle"
+                android:textColor="@color/white"
+                android:text="Elfogadom az Adatkezelési tájékoztatót:"
+                android:fontFamily="sans-serif-medium"
+                />
+
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-47dp"
+                android:layout_marginRight="-140dp"
+                android:backgroundTint="@color/dark"
+                android:id="@+id/data_open"
+                android:textSize="25dp"
+                android:fontFamily="sans-serif-medium"
+                android:drawableRight="@drawable/baseline_cloud_download_24"
+                app:cornerRadius = "30dp"/>
 
             <Button
                 android:layout_width="350dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="0dp"
                 android:text="Regisztrálás"
                 android:backgroundTint="@color/middle"
                 android:id="@+id/signup_button"
                 android:textSize="25dp"
+                android:fontFamily="sans-serif-medium"
                 android:drawableRight="@drawable/baseline_keyboard_arrow_right_24"
                 app:cornerRadius = "30dp"/>
 
@@ -169,7 +239,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="13dp"
                 android:text="Van már fiókod? Jelentkezz be"
+                android:textSize="17dp"
+                android:drawableRight="@drawable/baseline_keyboard_arrow_right_24"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="V1.0.0"
+                android:fontFamily="sans-serif-medium"
                 android:textColor="@color/white" />
 
 

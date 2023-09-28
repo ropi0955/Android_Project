@@ -6,7 +6,7 @@ public class Constants {
     /* Szabadon felhasználható konstansok */
 
     public static final String special_chars = "!(){}[]:;<>?,@#$%^&*+=_-~`|./'";
-
     public static final String atCharacter = "@";
+    public static final String slashCharacter = "/";
 
 }

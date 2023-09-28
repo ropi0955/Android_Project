@@ -77,6 +77,15 @@
                 android:textColor="@color/white"
                 android:layout_gravity="center"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="160dp"
+                android:text="V1.0.0"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/white" />
+
 
 
         </LinearLayout>

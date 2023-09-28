@@ -22,6 +22,8 @@ public class UserDatasService {
     public String user_street;
     public String user_street_number;
     public String user_name;
+    public String phone_number;
+    public String birthday;
 
     // Getters és Setters
     public String getUser_email_address() {
@@ -78,6 +80,22 @@ public class UserDatasService {
 
     public void setUser_name(String user_name) {
             this.user_name = user_name;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String user_phone_number) {
+        this.phone_number = user_phone_number;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String user_birthday) {
+        this.birthday = user_birthday;
     }
 
 

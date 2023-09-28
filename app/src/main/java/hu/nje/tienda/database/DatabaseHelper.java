@@ -23,15 +23,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public SecurityService secsrv = new SecurityService();
 
-    public static final String databaseName = "signup.db";
+    public static final String databaseName = "tiendadatas.db";
 
     public DatabaseHelper(@Nullable Context context) {
-        super(context, "signup.db", null, 1);
+        super(context, databaseName, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase MyDatabase) {
-        MyDatabase.execSQL("create Table allusers(email TEXT primary key, password TEXT, lastName TEXT, firstName TEXT, userName TEXT, cityName TEXT, streetName TEXT, streetNumbers TEXT)");
+        MyDatabase.execSQL("create Table allusers(email TEXT primary key, password TEXT, lastName TEXT, firstName TEXT, userName TEXT, cityName TEXT, streetName TEXT, streetNumbers TEXT, phoneNumber TEXT, birthday TEXT )");
     }
 
     @Override
@@ -40,7 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // Regisztrációkor ha minden elenőrzés stimmel akkor "bele rakja" az adatokat a db-be
-    public Boolean insertData(String email, String password, String lastName, String firstName, String userName, String cityName, String streetName, String streetNumbers){
+    public Boolean insertData(String email, String password, String lastName, String firstName, String userName, String cityName, String streetName, String streetNumbers, String phoneNumber, String birthday){
         SQLiteDatabase MyDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -66,9 +66,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("cityName",uppercaseCityName);
         contentValues.put("streetName",uppercaseStreetName);
         contentValues.put("streetNumbers",streetNumbers);
+        contentValues.put("phoneNumber",phoneNumber);
+        contentValues.put("birthday",birthday);
         long result = MyDatabase.insert("allusers", null, contentValues);
 
         if (result == -1){
+            System.out.println("RÁZUULT: " + result);
             return false;
         }else{
             return true;
@@ -114,6 +117,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         this.setdbstreetname(email);
         this.setdbstreetnumber(email);
         this.setdbusername(email);
+        this.setdbphonenumber(email);
+        this.setdbbirthday(email);
     }
 
     public void setdbfirstname(String email){
@@ -179,6 +184,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             this.usrv.setUser_name(user_name_db.getString(0));
         }else{
             this.usrv.setUser_name("Hibás adat");
+        }
+    }
+
+    public void setdbphonenumber(String email){
+        SQLiteDatabase MyDatabase = this.getWritableDatabase();
+        /* Lekérdezések e-mail cím alapján */
+        Cursor phone_number_db = MyDatabase.rawQuery("Select phoneNumber from allusers where email = ?", new String[]{email});
+        if (phone_number_db.moveToFirst()){
+            this.usrv.setPhone_number(phone_number_db.getString(0));
+        }else{
+            this.usrv.setPhone_number("Hibás adat");
+        }
+    }
+
+    public void setdbbirthday(String email){
+        SQLiteDatabase MyDatabase = this.getWritableDatabase();
+        /* Lekérdezések e-mail cím alapján */
+        Cursor birthday_db = MyDatabase.rawQuery("Select birthday from allusers where email = ?", new String[]{email});
+        if (birthday_db.moveToFirst()){
+            this.usrv.setBirthday(birthday_db.getString(0));
+        }else{
+            this.usrv.setBirthday("Hibás adat");
         }
     }
 

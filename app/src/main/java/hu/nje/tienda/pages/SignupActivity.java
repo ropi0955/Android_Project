@@ -15,8 +15,12 @@ import hu.nje.tienda.MainActivity;
 import hu.nje.tienda.R;
 import hu.nje.tienda.database.DatabaseHelper;
 import hu.nje.tienda.services.RegisterCheckService;
+import hu.nje.tienda.services.UserDatasService;
 
 public class SignupActivity extends AppCompatActivity {
+
+    // TODO REAMDE
+    /* A Regisztráció ablak */
 
     public RegisterCheckService regsrv = new RegisterCheckService();
 
@@ -45,14 +49,16 @@ public class SignupActivity extends AppCompatActivity {
         signup = findViewById(R.id.signup_button);
         go_to_login = findViewById(R.id.loginRedirectText);
 
+        // Alul a szöveg amely átirányít a bejelentkezéshez
         go_to_login.setOnClickListener(new View.OnClickListener() {
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
             }
         });
 
+        // Regisztráció gombra kattintva
         signup.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -99,9 +105,8 @@ public class SignupActivity extends AppCompatActivity {
                     Toast.makeText(SignupActivity.this,"Nem töltött ki minden mezőt", Toast.LENGTH_SHORT).show();
                 }
             }
-
         });
 
-
     }
+
 }

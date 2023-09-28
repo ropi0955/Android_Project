@@ -2,19 +2,22 @@ package hu.nje.tienda.services;
 
 import android.text.TextUtils;
 
+import hu.nje.tienda.services.helpers.constants.Constants;
+
 public class RegisterCheckService {
 
-    // Regisztráláshoz szükséges ellenörzések
+    // TODO README
+    /* Regisztráláshoz szükséges ellenörzések */
 
-    String special_chars = "!(){}[]:;<>?,@#$%^&*+=_-~`|./'";
-    String atCharacter = "@";
+    public Constants c = new Constants();
 
+    // Az email tartalmaz-e @ karaktert
     public boolean containAtCharacter(String email){
         char[] ca= email.toCharArray();
         Boolean contain_at_character = false;
         for (int i = 0; i < email.length(); i++) {
             char x = email.charAt(i);
-            if (atCharacter.contains(String.valueOf(ca[i]))) {
+            if (c.atCharacter.contains(String.valueOf(ca[i]))) {
                 contain_at_character = true;
             }
         }
@@ -25,6 +28,7 @@ public class RegisterCheckService {
         }
     }
 
+    // Ha valamelyik input üres akkor figyelmeztet
     public boolean checkValueIsNull(String email, String last_name, String first_name, String city_name, String street_name, String street_number, String user_name, String password, String repass){
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(last_name) || TextUtils.isEmpty(first_name)
                 || TextUtils.isEmpty(city_name) || TextUtils.isEmpty(street_name) || TextUtils.isEmpty(street_number)
@@ -35,6 +39,7 @@ public class RegisterCheckService {
         }
     }
 
+    // Ellenőrzi a jelszó hosszúságát (min. 8 karakter), ellenőrzi, hogy a jelszó tartalmaz-e betűt, számot és speciális karaktert
     public boolean securePassCheck(String password){
         if (password.length() >= 8 && Character.isUpperCase(password.charAt(0))) {
             System.out.println("Több 8 hosszúságú");
@@ -49,7 +54,7 @@ public class RegisterCheckService {
                 }
                 else if (Character.isDigit(x)) {
                     hasDigit = true;
-                }  else if(special_chars.contains(String.valueOf(ch[i]))){
+                }  else if(c.special_chars.contains(String.valueOf(ch[i]))){
                     containsSpecialChar = true;
                 }
             }
@@ -62,6 +67,5 @@ public class RegisterCheckService {
             return false;
         }
     }
-
 
 }

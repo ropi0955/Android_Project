@@ -70,7 +70,7 @@ private ImageButton profileButton;
     }
 
     private void openStock(){
-        Intent intent = new Intent(this, MarketActivity.class);
+        Intent intent = new Intent(this, ProductList.class);
         startActivities(new Intent[]{intent});
     }
     private void openSalesActivity(){

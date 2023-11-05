@@ -48,6 +48,7 @@ public class NewOrder extends AppCompatActivity {
         ed1 = findViewById(R.id.ed1);
         ed2 = findViewById(R.id.ed2);
         ed3 = findViewById(R.id.ed3);
+
         b1 = findViewById(R.id.btn1);
         totalSum = findViewById(R.id.t4);
         table = findViewById(R.id.tb1);
@@ -100,7 +101,12 @@ public class NewOrder extends AppCompatActivity {
             sum += Integer.parseInt(data3.get(i));
         }
 
-        totalSum.setText("Total: " + sum);
+        totalSum.setText(String.valueOf(sum)); // Corrected to display the sum correctly
+
+        // Pass the total value to SalesActivity and navigate to it
+        Intent intent = new Intent(this, SalesActivity.class);
+        intent.putExtra(" ",sum);
+        startActivity(intent);
 
         ed1.setText("");
         ed2.setText("");

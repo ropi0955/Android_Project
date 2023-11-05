@@ -7,10 +7,9 @@
     android:background="@drawable/tienda_bg"
     tools:context=".ProfileActivity">
 
-
     <ScrollView
-        android:layout_width="423dp"
-        android:layout_height="826dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -49,7 +48,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/blue_border"
-        android:text="EmployeeId"
+        android:text=""
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,11 +66,12 @@
         android:drawableLeft="@drawable/baseline_account_circle_24"
         android:drawablePadding="8dp"
         android:padding="8dp"
-        android:text="Teljes Név"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameText" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameText"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/textEmailAddress"
@@ -83,11 +83,12 @@
         android:drawableLeft="@drawable/baseline_email_24"
         android:drawablePadding="8dp"
         android:padding="8dp"
-        android:text="Email cím*"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textFullName" />
+        app:layout_constraintTop_toBottomOf="@+id/textFullName"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/textPhone"
@@ -100,11 +101,12 @@
         android:drawablePadding="8dp"
         android:inputType="phone"
         android:padding="8dp"
-        android:text="Telefonszám"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/textEmailAddress"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/textPostalAddress"
@@ -116,11 +118,12 @@
         android:drawableLeft="@drawable/baseline_house_24"
         android:drawablePadding="8dp"
         android:padding="8dp"
-        android:text="Lakcím"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/textPhone"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/textPostCode"
@@ -132,9 +135,10 @@
         android:drawableLeft="@drawable/baseline_house_24"
         android:drawablePadding="8dp"
         android:padding="8dp"
-        android:text="irányítószám"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPostalAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/textPostalAddress"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

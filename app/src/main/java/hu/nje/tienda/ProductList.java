@@ -65,7 +65,7 @@ public class ProductList extends AppCompatActivity {
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ProductList.this));
         int totalAssets = customAdapter.calculateTotalAssets();
-        totalAssetTextView.setText("Teljes érték: " + totalAssets);
+        totalAssetTextView.setText("Teljes értékek: " + totalAssets);
     }
 
     @Override

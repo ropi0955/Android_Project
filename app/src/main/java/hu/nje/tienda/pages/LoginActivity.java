@@ -1,8 +1,5 @@
 package hu.nje.tienda.pages;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,9 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import hu.nje.tienda.MainActivity;
 import hu.nje.tienda.R;
 import hu.nje.tienda.database.DatabaseHelper;
-import hu.nje.tienda.services.SecurityService;
 import hu.nje.tienda.services.UserDatasService;
 
 public class LoginActivity extends AppCompatActivity {
@@ -56,7 +55,12 @@ public class LoginActivity extends AppCompatActivity {
 
                 String user_email = email.getText().toString();
                 String user_password = password.getText().toString();
-                Intent intent = new Intent(getApplicationContext(), MarketActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+
+                /*SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("user_email", user_email);
+                editor.apply();*/
 
                 if (TextUtils.isEmpty(user_email) || TextUtils.isEmpty(user_password)){
                     Toast.makeText(LoginActivity.this, "Nem töltött ki minden mezőt", Toast.LENGTH_SHORT).show();

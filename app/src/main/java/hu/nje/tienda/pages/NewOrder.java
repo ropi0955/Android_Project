@@ -2,6 +2,7 @@ package hu.nje.tienda.pages;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,12 +11,16 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
+import hu.nje.tienda.MainActivity;
 import hu.nje.tienda.R;
 
 public class NewOrder extends AppCompatActivity {
 
+    private FloatingActionButton backMainActivityButton3;
     private ArrayList<String> data = new ArrayList<String>();
     private ArrayList<String> data1 = new ArrayList<String>();
     private ArrayList<String> data2 = new ArrayList<String>();
@@ -32,12 +37,20 @@ public class NewOrder extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_order);
 
+        backMainActivityButton3 = findViewById(R.id.backMainActivityButton3);
+        backMainActivityButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backMainActivity3();
+            }
+        });
+
         ed1 = findViewById(R.id.ed1);
         ed2 = findViewById(R.id.ed2);
         ed3 = findViewById(R.id.ed3);
-
         b1 = findViewById(R.id.btn1);
         totalSum = findViewById(R.id.t4);
+        table = findViewById(R.id.tb1);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +58,11 @@ public class NewOrder extends AppCompatActivity {
                 add();
             }
         });
+    }
+
+    private void backMainActivity3() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     public void add() {
@@ -57,9 +75,6 @@ public class NewOrder extends AppCompatActivity {
         data1.add(String.valueOf(price));
         data2.add(String.valueOf(qty));
         data3.add(String.valueOf(tot));
-
-        TableLayout table = findViewById(R.id.tb1);
-
 
         TableRow row = new TableRow(this);
         TextView t1 = new TextView(this);
@@ -86,7 +101,6 @@ public class NewOrder extends AppCompatActivity {
         }
 
         totalSum.setText("Total: " + sum);
-
 
         ed1.setText("");
         ed2.setText("");

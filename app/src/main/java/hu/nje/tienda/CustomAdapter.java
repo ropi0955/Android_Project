@@ -14,10 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import hu.nje.tienda.pages.SalesActivity;
+
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
     private Context context;
-Activity activity;
-   private ArrayList product_id, product_name, product_quantity, product_price, product_description;
+    Activity activity;
+    private ArrayList product_id, product_name, product_quantity, product_price, product_description;
 
     CustomAdapter(Context context,
                   Activity activity,
@@ -25,7 +27,7 @@ Activity activity;
                   ArrayList product_name,
                   ArrayList product_quantity,
                   ArrayList product_price,
-                  ArrayList product_description){
+                  ArrayList product_description) {
         this.activity = activity;
         this.context = context;
         this.product_id = product_id;
@@ -35,37 +37,39 @@ Activity activity;
         this.product_description = product_description;
 
     }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view =inflater.inflate(R.layout.my_row, parent, false);
+        View view = inflater.inflate(R.layout.my_row, parent, false);
         return new MyViewHolder(view);
     }
-   // @RequiresApi(api = Build.VERSION_CODES.M)
+
+    // @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder,  int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         int currentPosition = holder.getAdapterPosition();
 
 
-    holder.product_id_txt.setText(String.valueOf(product_id.get(currentPosition)));
-    holder.product_name_txt.setText(String.valueOf(product_name.get(currentPosition)));
-    holder.product_quantity_txt.setText(String.valueOf(product_quantity.get(currentPosition)));
-    holder.product_price_txt.setText(String.valueOf(product_price.get(currentPosition)));
-    holder.product_description_txt.setText(String.valueOf(product_description.get(currentPosition)));
-    holder.mainLayout.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            int clickedPosition = holder.getAdapterPosition();
-            Intent intent = new Intent(context, ProductUpdate.class);
-            intent.putExtra("id", String.valueOf(product_id.get(clickedPosition)));
-            intent.putExtra("name", String.valueOf(product_name.get(clickedPosition)));
-            intent.putExtra("quantity", String.valueOf(product_quantity.get(clickedPosition)));
-            intent.putExtra("price", String.valueOf(product_price.get(clickedPosition)));
-            intent.putExtra("description", String.valueOf(product_description.get(clickedPosition)));
-            activity.startActivityForResult(intent, 1);
-        }
-    });
+        holder.product_id_txt.setText(String.valueOf(product_id.get(currentPosition)));
+        holder.product_name_txt.setText(String.valueOf(product_name.get(currentPosition)));
+        holder.product_quantity_txt.setText(String.valueOf(product_quantity.get(currentPosition)));
+        holder.product_price_txt.setText(String.valueOf(product_price.get(currentPosition)));
+        holder.product_description_txt.setText(String.valueOf(product_description.get(currentPosition)));
+        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int clickedPosition = holder.getAdapterPosition();
+                Intent intent = new Intent(context, ProductUpdate.class);
+                intent.putExtra("id", String.valueOf(product_id.get(clickedPosition)));
+                intent.putExtra("name", String.valueOf(product_name.get(clickedPosition)));
+                intent.putExtra("quantity", String.valueOf(product_quantity.get(clickedPosition)));
+                intent.putExtra("price", String.valueOf(product_price.get(clickedPosition)));
+                intent.putExtra("description", String.valueOf(product_description.get(clickedPosition)));
+                activity.startActivityForResult(intent, 1);
+            }
+        });
     }
 
     @Override
@@ -86,5 +90,24 @@ Activity activity;
             product_description_txt = itemView.findViewById(R.id.product_description_txt);
             mainLayout = itemView.findViewById(R.id.mainLayout);
         }
+    }
+
+    public int calculateTotalAssets() {
+        int totalAssets = 0;
+        for (int i = 0; i < product_id.size(); i++) {
+            int quantity = Integer.parseInt(String.valueOf(product_quantity.get(i)));
+            int price = Integer.parseInt(String.valueOf(product_price.get(i)));
+            int asset = quantity * price;
+            totalAssets += asset;
+        }
+        return totalAssets;
+    }
+
+    public void salesBeTolt() {
+        int totalAssets = calculateTotalAssets();
+
+        Intent intent = new Intent(context, SalesActivity.class);
+        intent.putExtra("totalAssets ",totalAssets);
+        context.startActivity(intent);
     }
 }

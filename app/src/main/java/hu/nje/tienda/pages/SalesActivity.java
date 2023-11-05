@@ -2,6 +2,7 @@ package hu.nje.tienda.pages;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -23,19 +24,19 @@ public class SalesActivity extends AppCompatActivity {
 
         backMainActivityButton3 = findViewById(R.id.backMainActivityButton3);
         backMainActivityButton3.setOnClickListener(new View.OnClickListener() {
-                                                       @Override
-                                                       public void onClick(View v) {
-                                                           backMainActivity3();
-                                                       }
-                                                   });
+            @Override
+            public void onClick(View v) {
+            backMainActivity3();
+            }
+        });
 
-                // Retrieve the total value from the intent
-        int totalSum = getIntent().getIntExtra(" ", 0);
 
-        // Now you can use the totalValue in this activity
-        // For example, you can display it in a TextView
+        int totalAssets = getIntent().getIntExtra("totalAssets ",0);
+        Log.d("SalesActivity","Received totalAssets:" + totalAssets);
+
+
         EditText totalValueEditText = findViewById(R.id.OutgoingM);
-        totalValueEditText.setText(" "+ totalSum);
+        totalValueEditText.setText(" "+ totalAssets);
     }
 
     private void backMainActivity3() {

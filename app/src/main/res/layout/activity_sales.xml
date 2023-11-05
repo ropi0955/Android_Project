@@ -127,6 +127,7 @@
         android:layout_marginTop="12dp"
         android:background="@drawable/blue_border"
         android:drawablePadding="8dp"
+        android:importantForAutofill="yes"
         android:padding="8dp"
         android:textAlignment="center"
         android:textSize="35dp"

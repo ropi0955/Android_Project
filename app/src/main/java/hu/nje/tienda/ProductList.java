@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -22,7 +23,9 @@ public class ProductList extends AppCompatActivity {
     MyDatabaseHelper myDB;
     ArrayList<String> product_id, product_name, product_quantity, product_price, product_description;
 
+    TextView totalAssetTextView;
     CustomAdapter customAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class ProductList extends AppCompatActivity {
 
         backMainActivityButton4 = findViewById(R.id.backMainActivityButton4);
         recyclerView =findViewById(R.id.recyclerView);
+        totalAssetTextView= findViewById(R.id.totalAssetTextView);
         addButton = findViewById(R.id.addButton);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +64,8 @@ public class ProductList extends AppCompatActivity {
         customAdapter = new CustomAdapter(ProductList.this, ProductList.this, product_id, product_name, product_quantity, product_price, product_description);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ProductList.this));
-
+        int totalAssets = customAdapter.calculateTotalAssets();
+        totalAssetTextView.setText("Teljes érték: " + totalAssets);
     }
 
     @Override

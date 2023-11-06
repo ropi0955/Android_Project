@@ -1,10 +1,5 @@
 package hu.nje.tienda.services;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-
-import hu.nje.tienda.database.DatabaseHelper;
-
 public class UserDatasService {
 
     // TODO README
@@ -96,6 +91,9 @@ public class UserDatasService {
 
     public void setBirthday(String user_birthday) {
         this.birthday = user_birthday;
+    }
+
+    public void setDatas(String userEmailAddress) {
     }
 
 

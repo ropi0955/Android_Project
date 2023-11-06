@@ -57,11 +57,6 @@ public class LoginActivity extends AppCompatActivity {
                 String user_password = password.getText().toString();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 
-                /*SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("user_email", user_email);
-                editor.apply();*/
-
                 if (TextUtils.isEmpty(user_email) || TextUtils.isEmpty(user_password)){
                     Toast.makeText(LoginActivity.this, "Nem töltött ki minden mezőt", Toast.LENGTH_SHORT).show();
                 }else{

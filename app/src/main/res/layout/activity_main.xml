@@ -49,32 +49,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_new_order" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_customer"
-        android:layout_width="260dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/custom_button"
-        android:text="Megrendelőink"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_stock" />
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_finance"
-        android:layout_width="260dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/custom_button"
-        android:text="Pénzügy"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_customer" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_profile"
@@ -87,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_finance" />
+        app:layout_constraintTop_toBottomOf="@+id/button_stock" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_log_out"

@@ -17,6 +17,8 @@ private Button button_new_order;
 private Button button_stock;
 private Button button_profile;
 private Button button_log_out;
+
+private Button addButton2;
 private ImageButton profileButton;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -26,6 +28,7 @@ private ImageButton profileButton;
 
         button_new_order = findViewById(R.id.button_new_order);
         button_stock = findViewById(R.id.button_stock);
+        addButton2 = findViewById(R.id.addButton2);
         button_profile = findViewById(R.id.button_profile);
         button_log_out = findViewById(R.id.button_log_out);
 
@@ -47,6 +50,12 @@ private ImageButton profileButton;
         button_stock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {openStock();
+            }
+        });
+        addButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openProductAdd();
             }
         });
 
@@ -72,6 +81,10 @@ private ImageButton profileButton;
 
     private void openStock(){
         Intent intent = new Intent(this, ProductList.class);
+        startActivities(new Intent[]{intent});
+    }
+    private void openProductAdd(){
+        Intent intent = new Intent(this, ProductAdd.class);
         startActivities(new Intent[]{intent});
     }
     private void openProfileActivity() {

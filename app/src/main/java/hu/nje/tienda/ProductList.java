@@ -16,15 +16,19 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
+import hu.nje.tienda.pages.SalesActivity;
+
 public class ProductList extends AppCompatActivity {
     RecyclerView recyclerView;
     FloatingActionButton backMainActivityButton4;
     FloatingActionButton addButton;
+    FloatingActionButton salesButton;
     MyDatabaseHelper myDB;
     ArrayList<String> product_id, product_name, product_quantity, product_price, product_description;
 
     TextView totalAssetTextView;
     CustomAdapter customAdapter;
+    public int sumAsset;
 
 
     @Override
@@ -36,6 +40,7 @@ public class ProductList extends AppCompatActivity {
         recyclerView =findViewById(R.id.recyclerView);
         totalAssetTextView= findViewById(R.id.totalAssetTextView);
         addButton = findViewById(R.id.addButton);
+        salesButton = findViewById(R.id.salesButton);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +56,12 @@ public class ProductList extends AppCompatActivity {
             }
         });
 
-
+        salesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToSales();
+            }
+        });
         myDB = new MyDatabaseHelper(ProductList.this);
         product_id = new ArrayList<>();
         product_name = new ArrayList<>();
@@ -66,6 +76,7 @@ public class ProductList extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(ProductList.this));
         int totalAssets = customAdapter.calculateTotalAssets();
         totalAssetTextView.setText("Teljes értékek: " + totalAssets);
+        sumAsset=totalAssets;
     }
 
     @Override
@@ -96,5 +107,10 @@ public class ProductList extends AppCompatActivity {
     private void backMainActivity4() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivities(new Intent[]{intent});
+    }
+    private void goToSales() {
+        Intent intent = new Intent(this, SalesActivity.class);
+        intent.putExtra("sumAsset", sumAsset);
+        startActivity(intent);
     }
 }

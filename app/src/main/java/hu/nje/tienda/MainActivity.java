@@ -9,15 +9,16 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import hu.nje.tienda.pages.MarketActivity;
+import hu.nje.tienda.pages.LoginActivity;
 import hu.nje.tienda.pages.NewOrder;
-import hu.nje.tienda.pages.SalesActivity;
 
 public class MainActivity extends AppCompatActivity {
 private Button button_new_order;
 private Button button_stock;
-private Button button_finance;
 private Button button_profile;
+private Button button_log_out;
+
+private Button addButton2;
 private ImageButton profileButton;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -27,8 +28,9 @@ private ImageButton profileButton;
 
         button_new_order = findViewById(R.id.button_new_order);
         button_stock = findViewById(R.id.button_stock);
-        button_finance = findViewById(R.id.button_finance);
+        addButton2 = findViewById(R.id.addButton2);
         button_profile = findViewById(R.id.button_profile);
+        button_log_out = findViewById(R.id.button_log_out);
 
 
 
@@ -50,15 +52,23 @@ private ImageButton profileButton;
             public void onClick(View view) {openStock();
             }
         });
-
-        button_finance.setOnClickListener(new View.OnClickListener() {
+        addButton2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {openSalesActivity(); }
+            public void onClick(View view) {
+                openProductAdd();
+            }
         });
 
        button_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {openProfileActivity(); }
+        });
+
+        button_log_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLoginActivity();
+            }
         });
 
        
@@ -73,12 +83,16 @@ private ImageButton profileButton;
         Intent intent = new Intent(this, ProductList.class);
         startActivities(new Intent[]{intent});
     }
-    private void openSalesActivity(){
-        Intent intent = new Intent(this, SalesActivity.class);
+    private void openProductAdd(){
+        Intent intent = new Intent(this, ProductAdd.class);
         startActivities(new Intent[]{intent});
     }
     private void openProfileActivity() {
         Intent intent = new Intent(this, ProfileActivity.class);
+        startActivities(new Intent[]{intent});
+    }
+    private void  openLoginActivity(){
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivities(new Intent[]{intent});
     }
 

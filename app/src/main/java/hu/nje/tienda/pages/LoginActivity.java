@@ -1,8 +1,5 @@
 package hu.nje.tienda.pages;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,9 +9,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import hu.nje.tienda.MainActivity;
+import hu.nje.tienda.ProfileActivity;
 import hu.nje.tienda.R;
 import hu.nje.tienda.database.DatabaseHelper;
-import hu.nje.tienda.services.SecurityService;
 import hu.nje.tienda.services.UserDatasService;
 
 public class LoginActivity extends AppCompatActivity {
@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 String user_email = email.getText().toString();
                 String user_password = password.getText().toString();
-                Intent intent = new Intent(getApplicationContext(), MarketActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 
                 if (TextUtils.isEmpty(user_email) || TextUtils.isEmpty(user_password)){
                     Toast.makeText(LoginActivity.this, "Nem töltött ki minden mezőt", Toast.LENGTH_SHORT).show();
@@ -64,8 +64,10 @@ public class LoginActivity extends AppCompatActivity {
                     Boolean checkuseremailpass = MyDatabase.checkEmailAndPassword(user_email, user_password);
                     if (checkuseremailpass){
                         MyDatabase.setDatas(user_email);
+                        Intent intentt = new Intent(getApplicationContext(), ProfileActivity.class);
+                        intentt.putExtra("fh", MyDatabase.getUserDatas());
+                        startActivity(intentt);
                         Toast.makeText(LoginActivity.this, "Sikeres bejelentkezés", Toast.LENGTH_SHORT).show();
-                        startActivity(intent);
                     }else{
                         Toast.makeText(LoginActivity.this, "Sikertelen bejelentkezés", Toast.LENGTH_SHORT).show();
                     }

@@ -120,6 +120,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         this.setdbphonenumber(email);
         this.setdbbirthday(email);
     }
+    public String getUserDatas(){
+        return this.usrv.getUser_email_address() + '|' + this.usrv.getUser_first_name()+ '|' +
+                this.usrv.getUser_last_name() + '|' +this.usrv.getUser_city()+ '|' + this.usrv.getUser_street()+
+                '|' + this.usrv.getUser_street_number() + '|' + this.usrv.getUser_name() + '|' + this.usrv.getPhone_number()+
+                '|' + this.usrv.getBirthday();
+    }
 
     public void setdbfirstname(String email){
         SQLiteDatabase MyDatabase = this.getWritableDatabase();

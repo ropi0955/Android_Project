@@ -70,7 +70,6 @@
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="@+id/addButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/baseline_attach_money_24"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

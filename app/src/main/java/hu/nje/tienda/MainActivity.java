@@ -29,7 +29,6 @@ private ImageButton profileButton;
         button_new_order = findViewById(R.id.button_new_order);
         button_stock = findViewById(R.id.button_stock);
         addButton2 = findViewById(R.id.addButton2);
-        button_profile = findViewById(R.id.button_profile);
         button_log_out = findViewById(R.id.button_log_out);
 
 
@@ -59,11 +58,6 @@ private ImageButton profileButton;
             }
         });
 
-       button_profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {openProfileActivity(); }
-        });
-
         button_log_out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,10 +79,6 @@ private ImageButton profileButton;
     }
     private void openProductAdd(){
         Intent intent = new Intent(this, ProductAdd.class);
-        startActivities(new Intent[]{intent});
-    }
-    private void openProfileActivity() {
-        Intent intent = new Intent(this, ProfileActivity.class);
         startActivities(new Intent[]{intent});
     }
     private void  openLoginActivity(){

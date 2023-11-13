@@ -51,19 +51,6 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_profile"
-        android:layout_width="260dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/custom_button"
-        android:text="Profilom"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addButton2" />
-
-    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addButton2"
         android:layout_width="260dp"
         android:layout_height="62dp"

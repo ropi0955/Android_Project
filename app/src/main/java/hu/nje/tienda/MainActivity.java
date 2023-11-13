@@ -18,6 +18,8 @@ private Button button_new_order;
 private Button button_stock;
 private Button button_finance;
 private Button button_profile;
+
+ProductList productList;
 private ImageButton profileButton;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -30,14 +32,14 @@ private ImageButton profileButton;
         button_finance = findViewById(R.id.button_finance);
         button_profile = findViewById(R.id.button_profile);
 
-
+        productList = new ProductList();
 
 
 
 
 
         //navigációk
-        
+
         button_new_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,7 +55,9 @@ private ImageButton profileButton;
 
         button_finance.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {openSalesActivity(); }
+            public void onClick(View view) {
+                int sumAsset = productList.getSumAsset();
+                goToSales(sumAsset);}
         });
 
        button_profile.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +65,6 @@ private ImageButton profileButton;
             public void onClick(View view) {openProfileActivity(); }
         });
 
-       
     }
 
     private void openNewOrder() {
@@ -73,9 +76,10 @@ private ImageButton profileButton;
         Intent intent = new Intent(this, ProductList.class);
         startActivities(new Intent[]{intent});
     }
-    private void openSalesActivity(){
+    private void goToSales(int sumAsset){
         Intent intent = new Intent(this, SalesActivity.class);
-        startActivities(new Intent[]{intent});
+        intent.putExtra("sumAsset", sumAsset);
+        startActivity(intent);
     }
     private void openProfileActivity() {
         Intent intent = new Intent(this, ProfileActivity.class);

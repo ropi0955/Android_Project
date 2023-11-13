@@ -23,12 +23,12 @@
         app:tint="@color/white" />
 
     <ImageView
-        android:layout_width="0dp"
-        android:layout_height="250dp"
+        android:layout_width="394dp"
+        android:layout_height="228dp"
         android:layout_centerVertical="true"
         android:src="@drawable/dollar_sign_sales"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backMainActivityButton3" />
 
@@ -59,7 +59,7 @@
         android:background="@drawable/blue_border"
         android:drawablePadding="8dp"
         android:padding="8dp"
-        android:text="Bevétel:"
+        android:text="Max:"
         android:textAlignment="center"
         android:textSize="29dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,5 +135,56 @@
         app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IncomeM" />
+
+    <EditText
+        android:id="@+id/percentageshow"
+        android:layout_width="118dp"
+        android:layout_height="62dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/blue_border"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        android:text="Százalék:"
+        android:textAlignment="center"
+        android:textSize="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moneyText3" />
+
+    <EditText
+        android:id="@+id/percentageM"
+        android:layout_width="234dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/blue_border"
+        android:drawablePadding="8dp"
+        android:inputType="numberSigned"
+        android:padding="8dp"
+        android:text="100000.000"
+        android:textAlignment="center"
+        android:textSize="35dp"
+        app:layout_constraintStart_toEndOf="@+id/percentageshow"
+        app:layout_constraintTop_toBottomOf="@+id/OutgoingM" />
+
+    <EditText
+        android:id="@+id/AdviceM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/blue_border"
+        android:drawablePadding="8dp"
+        android:inputType="text"
+        android:padding="8dp"
+        android:text="Minden jo"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

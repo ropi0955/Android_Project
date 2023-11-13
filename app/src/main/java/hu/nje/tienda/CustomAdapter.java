@@ -103,11 +103,4 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         return totalAssets;
     }
 
-    public void salesBeTolt() {
-        int totalAssets = calculateTotalAssets();
-
-        Intent intent = new Intent(context, SalesActivity.class);
-        intent.putExtra("totalAssets ",totalAssets);
-        context.startActivity(intent);
-    }
 }

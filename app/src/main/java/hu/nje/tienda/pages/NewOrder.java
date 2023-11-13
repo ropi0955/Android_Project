@@ -1,7 +1,5 @@
 package hu.nje.tienda.pages;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,11 +9,14 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
 import hu.nje.tienda.MainActivity;
+import hu.nje.tienda.ProductList;
 import hu.nje.tienda.R;
 
 public class NewOrder extends AppCompatActivity {
@@ -104,7 +105,7 @@ public class NewOrder extends AppCompatActivity {
         totalSum.setText(String.valueOf(sum));
 
 
-        Intent intent = new Intent(this, SalesActivity.class);
+        Intent intent = new Intent(this, ProductList.class);
         intent.putExtra(" ",sum);
         startActivity(intent);
 

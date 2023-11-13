@@ -34,7 +34,7 @@
 
     <EditText
         android:id="@+id/IncomeM"
-        android:layout_width="234dp"
+        android:layout_width="200dp"
         android:layout_height="65dp"
         android:layout_gravity="center"
         android:layout_marginTop="356dp"
@@ -52,14 +52,14 @@
 
     <EditText
         android:id="@+id/moneyText1"
-        android:layout_width="118dp"
+        android:layout_width="150dp"
         android:layout_height="62dp"
         android:layout_gravity="center"
         android:layout_marginTop="356dp"
         android:background="@drawable/blue_border"
         android:drawablePadding="8dp"
         android:padding="8dp"
-        android:text="Max:"
+        android:text="Tőke:"
         android:textAlignment="center"
         android:textSize="29dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,16 +69,16 @@
 
     <EditText
         android:id="@+id/moneyText2"
-        android:layout_width="118dp"
+        android:layout_width="150dp"
         android:layout_height="62dp"
         android:layout_gravity="center"
         android:layout_marginTop="436dp"
         android:background="@drawable/blue_border"
         android:drawablePadding="8dp"
         android:padding="8dp"
-        android:text="Kiadás:"
+        android:text="Készlet:"
         android:textAlignment="center"
-        android:textSize="29dp"
+        android:textSize="29sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,14 +86,14 @@
 
     <EditText
         android:id="@+id/moneyText3"
-        android:layout_width="118dp"
+        android:layout_width="150dp"
         android:layout_height="62dp"
         android:layout_gravity="center"
         android:layout_marginTop="516dp"
         android:background="@drawable/blue_border"
         android:drawablePadding="8dp"
         android:padding="8dp"
-        android:text="Össz:"
+        android:text="Összesen:"
         android:textAlignment="center"
         android:textSize="29dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +103,7 @@
 
     <EditText
         android:id="@+id/SummaM"
-        android:layout_width="234dp"
+        android:layout_width="200dp"
         android:layout_height="65dp"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
@@ -121,7 +121,7 @@
 
     <EditText
         android:id="@+id/OutgoingM"
-        android:layout_width="234dp"
+        android:layout_width="200dp"
         android:layout_height="65dp"
         android:layout_gravity="center"
         android:layout_marginTop="12dp"
@@ -134,20 +134,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IncomeM" />
+        app:layout_constraintTop_toBottomOf="@+id/IncomeM"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/percentageshow"
-        android:layout_width="118dp"
+        android:layout_width="150dp"
         android:layout_height="62dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@drawable/blue_border"
         android:drawablePadding="8dp"
         android:padding="8dp"
-        android:text="Százalék:"
+        android:text="Tőkearány:"
         android:textAlignment="center"
-        android:textSize="22dp"
+        android:textSize="27dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,10 +156,10 @@
 
     <EditText
         android:id="@+id/percentageM"
-        android:layout_width="234dp"
+        android:layout_width="200dp"
         android:layout_height="65dp"
         android:layout_gravity="center"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="96dp"
         android:background="@drawable/blue_border"
         android:drawablePadding="8dp"
@@ -179,6 +180,7 @@
         android:background="@drawable/blue_border"
         android:drawablePadding="8dp"
         android:inputType="text"
+        android:minHeight="48dp"
         android:padding="8dp"
         android:text="Minden jo"
         android:textAlignment="center"

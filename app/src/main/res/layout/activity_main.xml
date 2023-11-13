@@ -29,11 +29,12 @@
         android:id="@+id/button_new_order"
         android:layout_width="260dp"
         android:layout_height="62dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="152dp"
         android:background="@drawable/custom_button"
         android:text="Új Értékesítés Felvétele"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_maintext" />
 

@@ -68,6 +68,7 @@
         android:backgroundTint="@color/middle"
         android:clickable="true"
         android:focusable="true"
+        android:src="@drawable/baseline_attach_money_24"
         app:layout_constraintBottom_toBottomOf="@+id/addButton"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />

@@ -11,14 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import hu.nje.tienda.MainActivity;
+import hu.nje.tienda.ProductList;
 import hu.nje.tienda.R;
 
 public class SalesActivity extends AppCompatActivity {
 
     private FloatingActionButton backMainActivityButton3;
-    EditText OutgoingM, IncomeM, SummaM;
-
-
+    EditText OutgoingM, IncomeM, SummaM, PercentageM, AdviceM;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +36,18 @@ public class SalesActivity extends AppCompatActivity {
             SummaM = findViewById(R.id.SummaM);
             int extraction = resource - sumAsset;
             SummaM.setText(String.valueOf(extraction));
+
+
+            double percentage = (double) (extraction * 100) / resource;
+            PercentageM = findViewById(R.id.percentageM);
+            PercentageM.setText(String.format("%.2f%%", percentage));
+
+            AdviceM = findViewById(R.id.AdviceM);
+            checkPercentage(percentage);
         }
+
+
+
 
         backMainActivityButton3 = findViewById(R.id.backMainActivityButton3);
         backMainActivityButton3.setOnClickListener(new View.OnClickListener() {
@@ -53,5 +63,15 @@ public class SalesActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-}
 
+    private void checkPercentage(double percentage) {
+        AdviceM = findViewById(R.id.AdviceM);
+        if (percentage < 20.0) {
+            AdviceM.setText("Túl nagy készletérték, adj el valamit!");
+        } else if (percentage > 80.0) {
+            AdviceM.setText("Kihasználatlan erőforrás, vásárolj!");
+        } else {
+            AdviceM.setText("Minden rendben!");
+        }
+    }
+}

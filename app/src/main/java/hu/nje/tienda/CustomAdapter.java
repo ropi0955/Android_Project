@@ -3,6 +3,7 @@ package hu.nje.tienda;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,8 +100,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             int price = Integer.parseInt(String.valueOf(product_price.get(i)));
             int asset = quantity * price;
             totalAssets += asset;
+
         }
+
         return totalAssets;
     }
-
 }
